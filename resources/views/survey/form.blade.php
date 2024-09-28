@@ -12,7 +12,7 @@
         <p>{{ session('success') }}</p>
     @endif
 
-    <form action="/survey" method="POST">
+    <form action="/" method="POST">
         @csrf
         @foreach ($questions as $question)
             <p>{{ $question->question }}</p>
