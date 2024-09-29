@@ -7,5 +7,6 @@ use App\Http\Controllers\SurveyController;
     return view('welcome');
 });*/
 
-Route::get('/', [SurveyController::class, 'showForm']);
-Route::post('/', [SurveyController::class, 'submitResponse']);
+Route::get('/survey', [SurveyController::class, 'showResults']);  // 集計結果を表示
+Route::post('/', [SurveyController::class, 'submitResponse']);  // 回答を保存
+Route::get('/', [SurveyController::class, 'showForm']);  // アンケートフォームを表示

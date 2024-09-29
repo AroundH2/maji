@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class SurveyQuestion extends Model
 {
-    use HasFactory;
-    
+    public function responses()
+    {
+        return $this->hasMany(SurveyResponse::class, 'question_id');
+    }
 }

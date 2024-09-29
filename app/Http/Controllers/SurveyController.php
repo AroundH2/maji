@@ -23,7 +23,17 @@ class SurveyController extends Controller
             ]);
         }
 
-        return redirect()->back()->with('success', 'アンケートの回答ありがとうございました！');
+        return redirect('/survey');
+    }
+
+    public function showResults()
+    {
+        $questions = SurveyQuestion::with(['responses' => function($query) {
+        $query->selectRaw('question_id, response, COUNT(*) as count')
+              ->groupBy('question_id', 'response');
+        }])->get();
+
+        return view('survey.results', compact('questions'));
     }
 }
 
