@@ -18,6 +18,7 @@
             <p>{{ $question->question }}</p>
             <input type="text" name="responses[{{ $question->id }}]" required>
         @endforeach
+        </br>
         <button type="submit">送信</button>
     </form>
 </body>

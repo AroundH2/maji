@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('response');  // 回答内容
             $table->timestamps();  // 作成日時と更新日時
         });
+
     }
 
     /**
