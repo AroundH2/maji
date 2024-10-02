@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Database\Seeders\SurveySeeder;
 
 return new class extends Migration
 {
@@ -25,6 +26,7 @@ return new class extends Migration
             $table->string('response');  // 回答内容
             $table->timestamps();  // 作成日時と更新日時
         });
+        //$this->seed();
 
     }
 
@@ -36,4 +38,10 @@ return new class extends Migration
         Schema::dropIfExists('survey_responses');
         Schema::dropIfExists('survey_questions');
     }
+
+    /*protected function seed()
+    {
+        $seeder = new SurveySeeder();
+        $seeder->run();
+    }*/
 };

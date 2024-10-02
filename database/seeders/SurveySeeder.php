@@ -29,5 +29,10 @@ class SurveySeeder extends Seeder
             ['question' => 'あなたの一番好きな曲は何ですか？正式名称でお願いします(例:斜陽)'],
             ['question' => 'あなたの一番好きな曲は何ですか？正式名称でお願いします(例:斜陽)']
         );
+        /*SurveyQuestion::updateOrCreate(
+            ['question' => 'あなたの一番好きなonngakuは何ですか？正式名称でお願いします(例:斜陽)'],
+            ['question' => 'あなたの一番好きなonngakuは何ですか？正式名称でお願いします(例:斜陽)']
+        );*/
+
     }
 }
