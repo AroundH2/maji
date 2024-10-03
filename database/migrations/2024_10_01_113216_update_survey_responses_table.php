@@ -25,8 +25,17 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
-        //
+        Schema::table('survey_responses', function (Blueprint $table) {
+        
+        // 外部キー制約を解除して元の状態に戻す
+        $table->dropForeign(['question_id']);
+        /*
+        // 必要であれば、カラム自体も削除
+        $table->dropColumn('question_id');
+        */
+        });
+        
     }
 };
