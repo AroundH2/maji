@@ -25,7 +25,7 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down()
+    public function down():void
     {
         Schema::table('survey_responses', function (Blueprint $table) {
         
